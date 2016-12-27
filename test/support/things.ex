@@ -106,11 +106,7 @@ defmodule Things do
       ],
       resolve: fn
         %{id: id}, _ ->
-          # {:ok, @db |> Map.get(id)}
-          Absinthe.Resolution.Helpers.async(fn ->
-            {:ok, @db |> Map.get(id)}
-          end)
-
+          {:ok, @db |> Map.get(id)}
       end
 
     field :deprecated_thing,
